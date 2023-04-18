@@ -1,15 +1,19 @@
 <template>
   <main class="form-signin w-100 m-auto">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <form>
+    <form @submit.stop.prevent="submit">
       <h1 class="h4 mb-4 fw-normal">Credenciais de acesso</h1>
 
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input
+            v-model="email"
+            type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">Email</label>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input
+            v-model="password"
+            type="password" class="form-control" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Senha</label>
       </div>
       <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
@@ -18,17 +22,46 @@
 </template>
 
 <script>
+import Cookie from 'js-cookie';
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Login",
 
   data(){
     return{
+      email:'',
+      password:'',
 
     };
 
   },
-  methods:{},
+
+  created() {
+    Cookie.remove('_myapp_token');
+  },
+
+  methods:{
+
+    submit(){
+     const payload = {
+       email: this.email,
+       password: this.password,
+     }
+     fetch('http://127.0.0.1:8000/api/login',{
+       method:'POST',
+       headers:{
+         'Content-Type':'application/json',
+         'Accept':'application/json',
+       },
+       body:JSON.stringify(payload)
+     }).then(response=> response.json())
+        .then(res=>{
+          Cookie.set('_myapp_token',res.access_token);
+           console.log(res);
+         })
+    },
+  },
 };
 </script>
 
