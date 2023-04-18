@@ -8,9 +8,7 @@ defineProps<{
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
-    <h3>
-      Você vai se surpreender com nossas Ofertas e Qualidade
-    </h3>
+
   </div>
 </template>
 

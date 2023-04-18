@@ -10,12 +10,6 @@ import HelloWorld from './components/Home.vue'
 
     <div class="wrapper">
       <HelloWorld msg="Bem vindo a FRautopeças" />
-
-      <nav>
-<!--        <RouterLink to="/">Home</RouterLink>-->
-<!--        <RouterLink to="/about">About</RouterLink>-->
-        <RouterLink to="/login">Login</RouterLink>
-      </nav>
     </div>
   </header>
 

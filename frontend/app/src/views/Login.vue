@@ -2,7 +2,7 @@
   <main class="form-signin w-100 m-auto">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <form @submit.stop.prevent="submit">
-      <h1 class="h4 mb-4 fw-normal">Credenciais de acesso</h1>
+      <h1 class="h4 mb-4 fw-normal ">Credenciais de acesso</h1>
 
       <div class="form-floating">
         <input
@@ -37,9 +37,9 @@ export default {
 
   },
 
-  created() {
-    Cookie.remove('_myapp_token');
-  },
+  // created() {
+  //   Cookie.remove('_myapp_token');
+  // },
 
   methods:{
 
@@ -58,7 +58,6 @@ export default {
      }).then(response=> response.json())
         .then(res=>{
           Cookie.set('_myapp_token',res.access_token);
-           console.log(res);
          })
     },
   },

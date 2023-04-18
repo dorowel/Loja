@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Login from "@/views/Login.vue";
+// @ts-ignore
+import middleware from "../services/middleware.js";
 
 
 const router = createRouter({
@@ -9,7 +11,8 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+
     },
     {
       path: '/login',
@@ -19,6 +22,7 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
+      beforeEnter: middleware.auth,
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
