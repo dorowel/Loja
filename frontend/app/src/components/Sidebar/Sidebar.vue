@@ -27,11 +27,11 @@ export default {
     <br>
     <br>
 
-    <SidebarLink to="/" icon="fa fa-home">Home</SidebarLink>
-    <SidebarLink to="/dashboard" icon="fa fa-columns">Dashboard</SidebarLink>
-    <SidebarLink to="/analytics" icon="fa fa-bar-chart">Analytics</SidebarLink>
-    <SidebarLink to="/friends" icon="fa fa-users">Friends</SidebarLink>
-    <SidebarLink to="/image" icon="fa fa-image">Images</SidebarLink>
+    <SidebarLink to="/" icon="fa fa-home">Inicio</SidebarLink>
+    <SidebarLink to="/dashboard" icon="fa fa-columns">Painel</SidebarLink>
+    <SidebarLink to="/analytics" icon="fa fa-bar-chart">Análise</SidebarLink>
+    <SidebarLink to="/image" icon="fa fa-image">Relatório</SidebarLink>
+    <SidebarLink to="/image" icon="fa fa-share-square-o">Sair</SidebarLink>
 
     <span
         class="collapse-icon"

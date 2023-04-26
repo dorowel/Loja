@@ -4,27 +4,30 @@
 
     <div class="text-center mb-4">
       <img class="mb-4" src="@/assets/logo.svg" alt="Logo da Empresa" width="72" height="57">
-      <h1 class="h3 mb-3 fw-normal">Faça login</h1>
+      <h1 class="h3 mb-3 fw-normal">NOVO CADASTRO</h1>
     </div>
 
     <form @submit.stop.prevent="submit">
+      <div class="form-floating custom-spacing">
+        <input
+            v-model="name"
+            type="text" class="form-control" id="floatingName" placeholder="Maria Santos">
+        <label for="floatingName">Nome</label>
+      </div>
       <div class="form-floating custom-spacing">
         <input
             v-model="email"
             type="email" class="form-control" id="floatingInput" placeholder="maria.santos@gmail.com">
         <label for="floatingInput">Email</label>
       </div>
-      <div class="form-floating">
+      <div class="form-floating custom-spacing">
         <input
             v-model="password"
             type="password" class="form-control" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Senha</label>
       </div>
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
-      <div class="mt-2 text-center">
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Cadastrar</button>
 
-        <router-link :to="{ name: 'register' }">Novo cadastro</router-link> | <a href="#">Esqueceu a senha</a>
-      </div>
     </form>
   </main>
 </template>
@@ -36,10 +39,11 @@ import Router from "@/router";
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Login",
+  name: "Cadastro",
 
   data(){
     return{
+      name:'',
       email:'',
       password:'',
 
@@ -51,10 +55,11 @@ export default {
 
     submit(){
      const payload = {
+       name: this.name,
        email: this.email,
        password: this.password,
      }
-     fetch('http://127.0.0.1:8000/api/login',{
+     fetch('http://127.0.0.1:8000/api/register',{
        method:'POST',
        headers:{
          'Content-Type':'application/json',
@@ -108,8 +113,8 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
 .custom-spacing {
   margin-bottom: 15px;
 }
+
 </style>
