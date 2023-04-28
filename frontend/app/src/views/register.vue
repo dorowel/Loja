@@ -1,9 +1,9 @@
 <template>
   <main class="form-signin w-100 m-auto">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
     <div class="text-center mb-4">
       <img class="mb-4" src="@/assets/logo.svg" alt="Logo da Empresa" width="72" height="57">
+      <i class="fa fa-address-card-o" aria-hidden="true"></i>
       <h1 class="h3 mb-3 fw-normal">NOVO CADASTRO</h1>
     </div>
 
@@ -26,7 +26,7 @@
             type="password" class="form-control" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Senha</label>
       </div>
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Cadastrar</button>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Salvar</button>
 
     </form>
   </main>

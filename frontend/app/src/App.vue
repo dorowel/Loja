@@ -1,8 +1,8 @@
 <template>
   <div :style="{ 'margin-left': sidebarWidth }">
-    <Navbar/>
+    <Navbar v-if="$route.path !== '/login'"/>
+    <Sidebar v-if="$route.path !== '/login'" />
     <router-view />
-    <Sidebar />
   </div>
 </template>
 
@@ -12,12 +12,11 @@ import { sidebarWidth } from './components/Sidebar/state'
 import Navbar from './components/Sidebar/Navbar.vue';
 
 export default {
-  // eslint-disable-next-line vue/no-unused-components
-  components: { Sidebar,Navbar },
+  components: { Sidebar, Navbar },
+
   setup() {
     return { sidebarWidth }
   },
-
 }
 </script>
 <style>
