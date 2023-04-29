@@ -59,7 +59,7 @@ export default {
        email: this.email,
        password: this.password,
      }
-     fetch('http://127.0.0.1:8000/api/register',{
+     fetch('http://127.0.0.1:8000/api/users',{
        method:'POST',
        headers:{
          'Content-Type':'application/json',
@@ -69,11 +69,11 @@ export default {
      }).then(response=> response.json())
         .then(res=>{
           Cookie.set('_myapp_token',res.access_token);
-          Router.push({name: 'home'})
+          Router.push({name: 'login'})
          })
     },
     novo(){
-            Router.push({name: 'home'})
+            Router.push({name: 'login'})
     },
   },
 };

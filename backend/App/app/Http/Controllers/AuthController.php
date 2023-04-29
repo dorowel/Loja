@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+
     public function login(LoginRequest $request)
     {
         $input = $request->validated();
@@ -29,4 +30,5 @@ class AuthController extends Controller
            'expires_in'=>auth()->factory()->getTTL() * 60
         ]);
     }
+
 }
