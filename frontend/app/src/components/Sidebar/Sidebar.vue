@@ -28,10 +28,10 @@ export default {
     <br>
 
     <SidebarLink to="/" icon="fa fa-home">Inicio</SidebarLink>
-    <SidebarLink to="/dashboard" icon="fa fa-columns">Cadastro</SidebarLink>
-    <SidebarLink to="/analytics" icon="fa fa-bar-chart">Análise</SidebarLink>
-    <SidebarLink to="/image" icon="fa fa-image">Relatório</SidebarLink>
-    <SidebarLink to="/image" icon="fa fa-share-square-o">Sair</SidebarLink>
+    <SidebarLink to="/register" icon="fa fa-columns">Cadastro</SidebarLink>
+    <SidebarLink to="/analise" icon="fa fa-bar-chart">Análise</SidebarLink>
+    <SidebarLink to="/relatorio" icon="fa fa-image">Relatório</SidebarLink>
+    <SidebarLink to="/sair" icon="fa fa-share-square-o">Sair</SidebarLink>
 
     <span
         class="collapse-icon"

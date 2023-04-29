@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import RegisterView from "@/views/RegisterView.vue";
 import Login from "@/views/Login.vue";
 // @ts-ignore
 import middleware from "../services/middleware.js";
@@ -14,6 +15,13 @@ const router = createRouter({
       name: 'home',
       beforeEnter: middleware.auth,
       component: HomeView,
+
+    },
+    {
+      path: '/register',
+      name: 'register',
+      beforeEnter: middleware.auth,
+      component: RegisterView,
 
     },
     {
