@@ -7,8 +7,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Event;
-use PHPUnit\Framework\Constraint\ExceptionMessage;
 
 class UserController extends Controller
 {
