@@ -23,7 +23,7 @@
       <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
       <div class="mt-2 text-center">
 
-        <router-link :to="{ name: 'register' }" class="small-text">Novo cadastro</router-link> | <a href="#" class="small-text">Esqueceu a senha</a>
+        <router-link :to="{ name: 'users' }" class="small-text">Novo cadastro</router-link> | <a href="#" class="small-text">Esqueceu a senha</a>
       </div>
     </form>
   </main>

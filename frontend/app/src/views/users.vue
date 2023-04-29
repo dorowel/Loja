@@ -67,10 +67,9 @@ export default {
        },
        body:JSON.stringify(payload)
      }).then(response=> response.json())
-        .then(res=>{
-          Cookie.set('_myapp_token',res.access_token);
+        .then(
           Router.push({name: 'login'})
-         })
+         )
     },
     novo(){
             Router.push({name: 'login'})
